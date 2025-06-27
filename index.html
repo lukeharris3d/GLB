@@ -11,7 +11,9 @@
             width: 100vw;
             height: 100vh;
             background-color: #454247;
+            --poster-color: transparent;
         }
+        /* Style the AR button */
         .ar-button {
             position: absolute;
             bottom: 20px;
@@ -27,6 +29,7 @@
             border: none;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             z-index: 10;
+        }
     </style>
 </head>
 <body>
@@ -38,12 +41,15 @@
         environment-image="neutral"
         shadow-intensity="1" 
         autoplay
-        camera-orbit="-18.29deg 88.84deg 15m" 
-        field-of-view="35deg"
+        camera-orbit="-18.29deg 88.84deg 0.8m" 
+        field-of-view="50deg"
         environment-image="aircraft_workshop_01_1k.hdr"
         exposure="0.8"
         camera-controls
         animation-speed="0.5">
+        ios-src="https://lukeharris3d.github.io/GLB/Ghost1.usdz"> <!-- For iOS Quick Look -->
+        
+        <!-- AR Button (optional, but improves UX) -->
         <button class="ar-button" slot="ar-button">
             👆 View in AR
         </button>
