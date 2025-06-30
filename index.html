@@ -3,7 +3,7 @@
   <head>
     <script
       type="module"
-      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
     ></script>
     <style>
       body {
@@ -14,12 +14,12 @@
         width: 100vw;
         height: 100vh;
         background-color: #454247;
-        --poster-color: transparent;
+        poster-color: transparent;
       }
       /* Style the AR button */
       .ar-button {
         position: absolute;
-        bottom: 20px;
+        bottom: 60px;
         left: 50%;
         transform: translateX(-50%);
         background: #fff;
@@ -31,33 +31,41 @@
         cursor: pointer;
         border: none;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        z-index: 10;
       }
     </style>
   </head>
   <body>
     <model-viewer
-      src="https://lukeharris3d.github.io/GLB/Ghost1.glb"
-      alt="Hiphop Ghost"
       ar
+      camera-controls
+      touch-action="pan-y"
+      autoplay
       ar-scale="fixed"
       ar-placement="floor"
-      environment-image="neutral"
-      shadow-intensity="1"
-      autoplay
-      camera-orbit="-18.29deg 88.84deg 30m"
-      field-of-view="5deg"
-      environment-image="aircraft_workshop_01_1k.hdr"
-      exposure="0.8"
-      camera-controls
-      animation-speed="0.2"
+      src="https://lukeharris3d.github.io/GLB/Ghost1.glb"
+      alt="A 3D model of an astronaut"
       ios-src="https://lukeharris3d.github.io/GLB/Ghost1.usdz"
-      xr-environment
     >
-      <!-- For iOS Quick Look -->
-
-      <!-- AR Button (optional, but improves UX) -->
-      <button class="ar-button" slot="ar-button">👆 View in AR</button>
+      <button
+        slot="ar-button"
+        style="
+          background-color: white;
+          background: #fff;
+          color: #000;
+          padding: 10px 20px;
+          font-family: Arial, sans-serif;
+          font-size: 50px;
+          border-radius: 50px;
+          position: absolute;
+          bottom: 10%;
+          left: 50%;
+          transform: translateX(-50%);
+          border: none;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        "
+      >
+        Activate AR
+      </button>
     </model-viewer>
   </body>
 </html>
