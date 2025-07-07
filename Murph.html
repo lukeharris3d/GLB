@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+    ></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      model-viewer {
+        width: 100vw;
+        height: 100vh;
+        background-color: ##f3f6f4;
+        poster-color: transparent;
+      }
+
+    </style>
+  </head>
+  <body>
+    <model-viewer
+      ar
+      camera-controls
+      touch-action="pan-y"
+      autoplay
+      ar-scale="fixed"
+      ar-placement="floor"
+      xr-environment
+      src="https://lukeharris3d.github.io/GLB/Murph.glb"
+      alt="Murph"
+    >
+      <button
+        slot="ar-button"
+        style="
+          background-color: white;
+          background: #fff;
+          color: #000;
+          padding: 10px 20px;
+          font-family: Arial, sans-serif;
+          font-size: 50px;
+          border-radius: 50px;
+          position: absolute;
+          bottom: 10%;
+          left: 50%;
+          transform: translateX(-50%);
+          border: none;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        "
+      >
+        Activate AR
+      </button>
+    </model-viewer>
+  </body>
+</html>
